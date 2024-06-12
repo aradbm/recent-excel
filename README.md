@@ -2,7 +2,7 @@
 
 Finds your recent Excel sheets in your chosen folders for easy access.
 
-![Image 1](./metadata/ss1.png) ![Image 2](./metadata/ss2.png)
+![Image 1](./metadata/Screenshot1.png) ![Image 2](./metadata/Screenshot2.png)
 
 ## Configuring Directories
 
@@ -15,7 +15,7 @@ To specify the directories for searching Excel files, follow these steps:
 Example configuration:
 /Users/username/Documents, /Users/username/Desktop, /Users/username/Projects
 
-![Image 3](./metadata/ss3.png)
+![Image 3](./metadata/Screenshot3.png)
 
 Make sure to provide the full path for each directory, separated by commas. You can include multiple directories to expand the search scope.
 
