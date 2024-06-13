@@ -63,18 +63,24 @@ const getExcelFilesInUsers = (directory: string): ExcelFile[] => {
   return excelFiles;
 };
 
-export default function Command() {
+export default function Command(props: { arguments: { folderPath?: string } }) {
   const [list, setList] = useState<ExcelFile[]>([]);
   const { directories } = getPreferenceValues<Preferences>();
 
   useEffect(() => {
-    const folders = directories ? directories.split(",").map((dir) => dir.trim()) : [];
+    let folders: string[] = [];
+
+    if (props.arguments.folderPath) {
+      folders = [props.arguments.folderPath];
+    } else {
+      folders = directories ? directories.split(",").map((dir) => dir.trim()) : [];
+    }
 
     const excelFilesInUsers = folders.flatMap((folder) => getExcelFilesInUsers(folder));
 
     const sortedExcelFiles = excelFilesInUsers.sort((a, b) => b.lastModified.getTime() - a.lastModified.getTime());
     setList(sortedExcelFiles);
-  }, [directories]);
+  }, [directories, props.arguments.folderPath]);
 
   const handleOpenFile = (filePath: string) => {
     open(filePath);
