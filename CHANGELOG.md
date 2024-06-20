@@ -6,3 +6,4 @@
 - Improved searching by removing duplicate folders and child folders
 
 ## [Initial Version] - 2024-06-04
+
