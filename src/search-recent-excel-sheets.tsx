@@ -125,7 +125,6 @@ const removeChildrenFolders = (folders: string[]): string[] => {
 export default function Command(props: { arguments: { folderPath?: string } }) {
   const [list, setList] = useState<ExcelFile[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const { directories } = getPreferenceValues<Preferences>();
 
   useEffect(() => {
@@ -151,7 +150,6 @@ export default function Command(props: { arguments: { folderPath?: string } }) {
   };
 
   return (
-    <List isLoading={isLoading}>
     <List isLoading={isLoading}>
       {list.map((excelFile) => (
         <List.Item
